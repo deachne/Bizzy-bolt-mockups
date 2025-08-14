@@ -1,8 +1,10 @@
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { SafeAreaProvider } from 'react-native-safe-area-context'
+import { useFrameworkReady } from '@/hooks/useFrameworkReady';
 
 export default function RootLayout() {
+  useFrameworkReady();
   return (
     <SafeAreaProvider>
       <StatusBar style="light" backgroundColor="#10b981" />

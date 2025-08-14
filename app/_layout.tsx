@@ -1,7 +1,6 @@
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import '../src/index.css';
 
 export default function RootLayout() {
   return (
@@ -21,37 +20,29 @@ export default function RootLayout() {
         <Stack.Screen 
           name="index" 
           options={{ 
-            title: 'Bizzy Farm OS',
+            title: 'Bizzy Capture',
             headerShown: false 
           }} 
         />
         <Stack.Screen 
-          name="inbox" 
-          options={{ title: 'Inbox' }} 
+          name="camera" 
+          options={{ 
+            title: 'Field Photo',
+            presentation: 'fullScreenModal'
+          }} 
         />
         <Stack.Screen 
-          name="notes" 
-          options={{ title: 'Notes' }} 
+          name="voice" 
+          options={{ 
+            title: 'Voice Note',
+            presentation: 'modal'
+          }} 
         />
         <Stack.Screen 
-          name="fields" 
-          options={{ title: 'Fields' }} 
-        />
-        <Stack.Screen 
-          name="library" 
-          options={{ title: 'Library' }} 
-        />
-        <Stack.Screen 
-          name="crop-planning" 
-          options={{ title: 'Crop Planning' }} 
-        />
-        <Stack.Screen 
-          name="accounting" 
-          options={{ title: 'Accounting' }} 
-        />
-        <Stack.Screen 
-          name="canvas" 
-          options={{ title: 'Canvas' }} 
+          name="history" 
+          options={{ 
+            title: 'Recent Captures'
+          }} 
         />
       </Stack>
     </SafeAreaProvider>

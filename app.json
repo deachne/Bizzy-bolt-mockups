@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Bizzy Farm OS",
-    "slug": "bizzy-farm-os",
+    "name": "Bizzy Capture",
+    "slug": "bizzy-capture",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -15,23 +15,40 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.bizzy.farmos"
+      "supportsTablet": false,
+      "bundleIdentifier": "com.bizzy.capture",
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app needs access to camera to capture field photos",
+        "NSMicrophoneUsageDescription": "This app needs access to microphone to record voice notes",
+        "NSLocationWhenInUseUsageDescription": "This app needs location to tag your field observations"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#10b981"
       },
-      "package": "com.bizzy.farmos"
+      "package": "com.bizzy.capture",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png",
       "bundler": "metro"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow Bizzy to access your camera to capture field photos"
+        }
+      ]
     ],
-    "scheme": "bizzy-farm-os"
+    "scheme": "bizzy-capture"
   }
 }
